@@ -37,17 +37,7 @@
 		</div>
 		<div class="content">
 			<div class="userImage">
-			    <?php
-			    $login=$_COOKIE['user'];
-			    $mysql= new mysqli('localhost','root','root','registration');
-			    $result=$mysql->query("SELECT * FROM `users` WHERE `login`='$login'");
-			    if($result != NULL) {
-			    	$user=$result->fetch_assoc();
-			    	$image=base64_encode($user['images']);
-			    }
-			    
-			    ?>
-			    <img src="data:image/jpeg;base64, <?php echo $image?>" alt="">
+			    <img src="<?php echo $_COOKIE['image']?>" alt="">
 			</div>
 			<div class="userInfo">
 			    Логин: <?=$_COOKIE['user']?><br>
